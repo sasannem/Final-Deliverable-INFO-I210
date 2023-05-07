@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CodeHim">
+    <title>Javascript LocalCart Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/foundation/5.0.2/css/foundation.css'> 
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/ShoppingCart_styles.css">
+   </head>
+  <body>
+ 
+    <header class="intro">
+        <h1>Virtual Windows Shopping Cart</h1>
+    </header>
+  
+   
+ <main>
+     <div class="row">
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">Shopping Cart</a></h1>
+            </li>
+
+        </section>
+    </nav>
+    <div class="medium-4  columns">
+        <div class="cart">
+            <h1>Cart items</h1>
+            <div class="row">
+                <div class="medium-6 columns">
+                    <button class="tiny secondary" id="clear">Clear the cart</button>
+                </div>
+                <div class="medium-6 columns">
+                    <button class="tiny disabled" title="Work in progress">Checkout</button>
+                </div>
+            </div>
+            <div id="cartItems">Loading cart...</div>
+            Total price: <strong id="totalPrice">0 $</strong>
+        </div>
+      
+    </div>
+    <div class="medium-8 columns">
+        <h1>Virtual Windows</h1>
+        <div class="products">
+            <div class="product medium-4 columns" data-name="City" data-price="25" data-id="0">
+                <img src="./img/CITY WINDOW.jpg" alt="City" />
+                <h3>City</h3>
+                <input type="text" class="count" value="1" />
+                <button class="tiny">Add to cart</button>
+            </div>
+            <div class="product medium-4 columns" data-name="Rural" data-price="25" data-id="1">
+                <img src="./img/Rural WINDOW.jpg" alt="Rural" />
+                <h3>Rural</h3>
+                <input type="text" class="count" value="1" />
+                <button class="tiny">Add to cart</button>
+            </div>
+            <div class="product medium-4 columns" data-name="3D" data-price="25" data-id="2">
+                <img src="./img/3D WINDOW.jpg"alt="3D" />
+                <h3>3D</h3>
+                <input type="text" class="count" value="1" />
+                <button class="tiny">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/template" id="cartT">
+  <% _.each(items, function (item) { %> <div class = "panel"> <h3> <%= item.name %> </h3>  <span class="label">
+<%= item.count %> piece<% if(item.count > 1)
+{%>s
+<%}%> for <%= item.total %>$</span > </div>
+<% }); %>
+</script>
+
+
+    </main>
+ 
+      
+  <footer class="credit"><a title="Shopping cart" href="" target="_blank">Shopping Cart</a></footer>
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js'></script>
+<script  src="./js/script.js"></script>
+      
+<div class="button">
+    <a href= "index.html" ><i class="fas fa-arrow-up"></i></a>
+</div>
+  </body>
+</html>
